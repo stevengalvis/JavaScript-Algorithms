@@ -1,0 +1,22 @@
+{
+  "name": "javascript-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevengalvis/javascript-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevengalvis/javascript-algorithms/issues"
+  },
+  "homepage": "https://github.com/stevengalvis/javascript-algorithms#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
