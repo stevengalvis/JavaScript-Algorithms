@@ -1,5 +1,5 @@
+// p and q are connected if and only if they have the same id
 class QuickFindUF {
-  // p and q are connected if and only if they have the same id
   constructor(n) {
     this.id = [];
     for (let i = 0; i < n; i++) {
@@ -25,3 +25,12 @@ class QuickFindUF {
     }
   }
 }
+
+// let qf = new QuickFindUF(10);
+// console.log(qf.connected(1, 0));
+// qf.union(1, 0);
+// console.log(qf.connected(1, 0), " after union 1,0");
+// console.log(qf.connected(0, 2));
+// qf.union(0, 2);
+// console.log(qf.connected(0, 2), " after union 0,2");
+// console.log(qf.connected(1, 2));
