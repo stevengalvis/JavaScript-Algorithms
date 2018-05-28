@@ -1,8 +1,8 @@
-class WeightedQuickUnionUF {
+class WeightedQuickUnionPathCompressionUF {
   constructor(n) {
-    this.parent = []; // parent[i] = parent of i
-    this.size = []; // size[i] = number of sites in subtree rooted at i
-    this.count = n; // number of components
+    this.parent = [];
+    this.size = [];
+    this.count = n;
 
     for (let i = 0; i < n; i++) {
       this.parent[i] = i;
@@ -16,16 +16,18 @@ class WeightedQuickUnionUF {
 
   find(p) {
     this.validate(p);
+
     while (p != this.parent[p]) {
+      this.parent[p] = this.parent[this.parent[p]];
       p = this.parent[p];
     }
     return p;
   }
-  // validate p is a valid index
+
   validate(p) {
-    let n = this.parent.length;
+    let n = this.parent.lenth;
     if (p < 0 || p >= n) {
-      throw new Error("index" + p + " is not between 0 and " + (n - 1));
+      throw Error("index" + p + "is not between 0 and " + (n - 1));
     }
   }
 
@@ -36,7 +38,8 @@ class WeightedQuickUnionUF {
   union(p, q) {
     let rootP = this.find(p);
     let rootQ = this.find(q);
-    if (rootP == rootQ) {
+
+    if (rootP === rootQ) {
       return;
     }
 
@@ -47,11 +50,12 @@ class WeightedQuickUnionUF {
       this.parent[rootQ] = rootP;
       this.size[rootP] += this.size[rootQ];
     }
+
     this.count--;
   }
 }
 
-let qu = new WeightedQuickUnionUF(45);
+let qu = new WeightedQuickUnionPathCompressionUF(10);
 
 for (let i in qu.parent) {
   console.log(`index: ${i} has parent ${qu.parent[i]} and size ${qu.size[i]}`);
