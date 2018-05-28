@@ -1,3 +1,6 @@
+/* for more detailed information on Disjoint sets and path compression
+    https://people.eecs.berkeley.edu/~jrs/61b/lec/33
+*/
 class WeightedQuickUnionPathCompressionUF {
   constructor(n) {
     this.parent = [];
