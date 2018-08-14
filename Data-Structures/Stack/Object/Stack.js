@@ -24,6 +24,6 @@ class Stack {
 }
 
 let stack = new Stack();
-stack.push(0), stack.push(1);
+stack.push(0), stack.push(1 );
 console.log(stack.pop());
 console.log(stack);
