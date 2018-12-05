@@ -25,4 +25,15 @@ class BinarySearchTree {
       }
     }
   }
+  get(key) {
+    if (this.key == key) {
+      return this.value;
+    } else if (key < this.key && this.left) {
+      return this.left.get(key);
+    } else if (key > this.key && this.right) {
+      return this.right.get(key);
+    } else {
+      throw new Error("Key Error");
+    }
+  }
 }
